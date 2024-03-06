@@ -1,8 +1,10 @@
 # One HMTL Page Challenge
 
-Apps within one single html file without any dependencies.
+Create anything you want within 1 single html file.
 
-The goal is to create anything you want within 1 single html file. Practice your skills with the barebones of web development.
+Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern framework.
+
+Check out the [demo](https://one-html-page-challenge-zeta.vercel.app/).
 
 ## References
 
