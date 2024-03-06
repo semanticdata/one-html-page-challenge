@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One HTML Page Challenge | SemanticData</title>
+    <meta name="description"
+        content="Create anything you want within 1 single html file. Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern framework." />
+    <style>
+        :root {
+            --bg-color: #fff;
+            --bg-color-dark: #000;
+            --txt-color: #000;
+            --txt-color-dark: #fff;
+            --primaryColor: #7134ff;
+            --font-family: Georgia, 'Times New Roman', serif;
+            --container-width: 50rem;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        ::selection {
+            background: var(--primaryColor);
+            color: var(--txt-color-dark);
+        }
+
+        header {
+            text-align: center;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--txt-color);
+            background: var(--bg-color);
+            max-width: var(--container-width);
+            height: calc(100vh - 1.5rem);
+            line-height: 1.5;
+            margin: 0 auto;
+            font-size: large;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>One HTML Page Challenge</h1>
+    </header>
+
+    <main>
+        <p>Apps within one single html file without any dependencies. The goal is to create anything you want within 1
+            single html file.</p>
+        <p>Practice your skills with the barebones of web development: no assistance from libraries, no separation of
+            files, and no assistance from a modern framework.</p>
+    </main>
+
+    <footer>
+        <p>© 2024 Miguel Pimentel</p>
+    </footer>
+
+    <script></script>
+</body>
+
+</html>
