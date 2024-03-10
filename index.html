@@ -2,438 +2,604 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>One HTML Page Challenge | SemanticData</title>
-    <meta name="description"
-        content="Create anything you want within 1 single html file. Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern framework." />
-    <style>
-        :root {
-            --bg-color: #fff;
-            --bg-color-dark: #000;
-            --txt-color: #000;
-            --txt-color-dark: #fff;
-            --primaryColor: #7134ff;
-            --font-family: Georgia, "Times New Roman", serif;
-            --container-width: 50rem;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One HTML Page Challenge | SemanticData</title>
+  <meta name="description"
+    content="Create anything you want within 1 single html file. Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern framework." />
+  <style>
+    :root {
+      --bg-color: #fff;
+      --bg-color-dark: #000;
+      --txt-color: #000;
+      --txt-color-dark: #fff;
+      --primaryColor: #7134ff;
+      --font-family: Georgia, "Times New Roman", serif;
+      --container-width: 50rem;
+    }
 
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box;
-        }
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+    }
 
-        ::selection {
-            background: var(--primaryColor);
-            color: var(--txt-color-dark);
-        }
+    ::selection {
+      background: var(--primaryColor);
+      color: var(--txt-color-dark);
+    }
 
-        header {
-            text-align: center;
-        }
+    header {
+      text-align: center;
+    }
 
-        body {
-            font-family: var(--font-family);
-            color: var(--txt-color);
-            background: var(--bg-color);
-            max-width: var(--container-width);
-            height: calc(100vh - 1.5rem);
-            line-height: 1.5;
-            margin: 0 auto;
-            font-size: large;
-            display: flex;
-            flex-direction: column;
-        }
+    body {
+      font-family: var(--font-family);
+      color: var(--txt-color);
+      background: var(--bg-color);
+      max-width: var(--container-width);
+      height: calc(100vh - 1.5rem);
+      line-height: 1.5;
+      margin: 0 auto;
+      font-size: large;
+      display: flex;
+      flex-direction: column;
+    }
 
-        footer {
-            margin-top: auto;
-            text-align: center;
-        }
-    </style>
+    footer {
+      margin-top: auto;
+      text-align: center;
+    }
+
+    details {
+      border-radius: 0.2rem;
+      display: inline-block;
+    }
+
+    details[open] {
+      outline: 0.2rem solid var(--primaryColor);
+    }
+
+    details[open] summary {
+      border-bottom: 0.2rem solid var(--primaryColor);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 0.5rem 2rem;
+    }
+
+    section {
+      padding: 0.5rem 1.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.25;
+      border-left: 0.2rem solid var(--primaryColor);
+      padding-left: 1rem;
+    }
+
+    table {
+      margin: 3rem auto;
+      border-collapse: collapse;
+      box-shadow: 0.1rem 0.5rem 0.7rem rgba(0, 0, 0, 0.5);
+    }
+
+    th,
+    td {
+      border: 0.1rem solid #464646;
+      padding: 1px 10px;
+    }
+
+    table thead th,
+    table tfoot th {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    hr {
+      width: calc(var(--container-max-width) + 3rem);
+    }
+
+    hr {
+      overflow: visible;
+      padding: 0;
+      border: none;
+      border-top: medium double #333;
+      color: #333;
+      text-align: center;
+    }
+
+    hr:after {
+      content: '§';
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      padding: 0 0.25em;
+      background: var(--backgroundColor);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0));
+    }
+
+    hr.flared {
+      overflow: visible;
+      height: 30px;
+      border-style: solid;
+      border-color: black;
+      border-width: 1px 0 0 0;
+      border-radius: 20px;
+    }
+
+    hr.flared:before {
+      display: block;
+      content: '';
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+
+    input[type='checkbox'],
+    input[type='radio'],
+    input[type='range'],
+    progress {
+      accent-color: var(--primaryColor);
+    }
+
+    code {
+      padding: 0 0.2rem;
+      line-height: 1.2;
+      border-radius: 0.2rem;
+      outline: 0.1rem solid black;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    pre {
+      border-radius: 0.2rem;
+      overflow: auto;
+      outline: 0.2rem solid rgba(0, 0, 0, 0.75);
+    }
+
+    pre code {
+      background-color: transparent;
+      outline: none;
+    }
+
+    kbd {
+      background-color: #eee;
+      border-radius: 3px;
+      border: 1px solid #b4b4b4;
+      box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.2),
+        0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+      color: #333;
+      display: inline-block;
+      font-size: 0.85em;
+      font-weight: 700;
+      line-height: 1;
+      padding: 2px 4px;
+      white-space: nowrap;
+    }
+
+    button {
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.2rem;
+      font-weight: 600;
+      text-transform: none;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>One HTML Page Challenge</h1>
-    </header>
+  <header>
+    <h1>One HTML Page Challenge</h1>
+  </header>
 
-    <main>
-        <p>
-            Create anything you want within 1 single html file. Practice your skills
-            with the barebones of web development: no assistance from libraries, no
-            separation of files, and no assistance from a modern framework.
-        </p>
-
-<details>
-    <summary>Show/Hide</summary>
-
-
-<div>
-  <p id="section-headings">
-    <strong>Headings:</strong>
-  </p>
-
-  <h1>Heading Level 1</h1>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-  <h2>Heading Level 2</h2>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-  <h3>Heading Level 3</h3>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-  <h4>Heading level 4</h4>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-  <h5>Heading level 5</h5>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-  <h6>Heading level 6</h6>
-  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-</div>
-
-<hr />
-
-<div>
-  <p id="section-text"><strong>Text:</strong></p>
-
-  <p>
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-    ac turpis egestas.
-  </p>
-
-  <p>
-    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et
-    malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-    ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-    semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend
-    leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat
-    wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi.
-    Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-    sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis
-    pulvinar facilisis. Ut felis.
-  </p>
-
-  <blockquote>
+  <main>
+    <h2>Overview</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna.
-      Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.
-      Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est
-      malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium
-      ornare est.
+      Create anything you want within 1 single html file. Practice
+      your skills with the barebones of web development: no assistance
+      from libraries, no separation of files, and no assistance from a
+      modern framework.
     </p>
-    <cite>#cite <a href="#cite">#cite</a></cite>
-  </blockquote>
 
-  <p>
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-    ultricies mi vitae est. Mauris placerat eleifend leo.
-  </p>
+    <h2>Kitchen Sink</h2>
+    <p>A showcase of most HTML elements.</p>
+    <!-- <details open> -->
+    <details>
+      <summary>Show/Hide</summary>
+      <section>
+        <div>
+          <p id="section-headings">
+            <strong>Headings:</strong>
+          </p>
 
-  <p>
-    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-    Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor.
-    Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta
-    felis euismod semper.
-  </p>
-</div>
+          <h1>Heading Level 1</h1>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
 
-<hr />
+          <h2>Heading Level 2</h2>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
 
-<div>
-  <p id="section-lists">
-    <strong>Lists:</strong>
-  </p>
+          <h3>Heading Level 3</h3>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
 
-  <p id="ordered-list">
-    <strong>Ordered list:</strong>
-  </p>
-  <ol role="list" aria-labelledby="ordered-list">
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-    <li>Aliquam tincidunt mauris eu risus.</li>
-    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-  </ol>
+          <h4>Heading level 4</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
 
-  <p id="ordered-list-reversed">
-    <strong>Ordered list (reversed):</strong>
-  </p>
-  <ol role="list" aria-labelledby="ordered-list-reversed" reversed>
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-    <li>Aliquam tincidunt mauris eu risus.</li>
-    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-  </ol>
+          <h5>Heading level 5</h5>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
 
-  <p id="unordered-list">
-    <strong>Unordered list:</strong>
-  </p>
-  <ul role="list" aria-labelledby="unordered-list">
-    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-    <li>Aliquam tincidunt mauris eu risus.</li>
-    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-  </ul>
+          <h6>Heading level 6</h6>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at
+            eros.</p>
+        </div>
 
-  <p id="definition-list">
-    <strong>Definition list:</strong>
-  </p>
-  <dl aria-labelledby="definition-list">
-    <dt>Lorem ipsum dolor sit amet</dt>
-    <dd>
-      Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </dd>
+        <hr />
 
-    <dt>Lorem ipsum dolor sit amet</dt>
-    <dd>
-      Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </dd>
-  </dl>
+        <div>
+          <p id="section-text"><strong>Text:</strong></p>
 
-  <p id="definition-list">
-    <strong>Definition list with &lt;div&gt;s:</strong>
-  </p>
-  <dl aria-labelledby="definition-list">
-    <div>
-      <dt>Lorem ipsum dolor sit amet</dt>
-      <dd>
-        Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </dd>
-    </div>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas.
+          </p>
 
-    <div>
-      <dt>Lorem ipsum dolor sit amet</dt>
-      <dd>
-        Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </dd>
-    </div>
-  </dl>
-</div>
+          <p>
+            <strong>Pellentesque habitant morbi tristique</strong>
+            senectus et netus et malesuada fames ac turpis egestas.
+            Vestibulum tortor quam, feugiat vitae, ultricies eget,
+            tempor sit amet, ante. Donec eu libero sit amet quam
+            egestas semper.
+            <em>Aenean ultricies mi vitae est.</em> Mauris placerat
+            eleifend leo. Quisque sit amet est et sapien ullamcorper
+            pharetra. Vestibulum erat wisi, condimentum sed,
+            <code>commodo vitae</code>, ornare sit amet, wisi.
+            Aenean fermentum, elit eget tincidunt condimentum, eros
+            ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+            <a href="#">Donec non enim</a> in turpis pulvinar
+            facilisis. Ut felis.
+          </p>
 
-<hr />
+          <blockquote>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Vivamus magna. Cras in mi at felis aliquet
+              congue. Ut a est eget ligula molestie gravida.
+              Curabitur massa. Donec eleifend, libero at sagittis
+              mollis, tellus est malesuada tellus, at luctus
+              turpis elit sit amet quam. Vivamus pretium ornare
+              est.
+            </p>
+            <cite>#cite <a href="#cite">#cite</a></cite>
+          </blockquote>
 
-<div>
-  <p id="section-inline-elements">
-    <strong>Inline elements:</strong>
-  </p>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum tortor
+            quam, feugiat vitae, ultricies eget, tempor sit amet,
+            ante. Donec eu libero sit amet quam egestas semper.
+            Aenean ultricies mi vitae est. Mauris placerat eleifend
+            leo.
+          </p>
 
-  <p><a href="#">Link</a></p>
-  <p><strong>Strong</strong></p>
-  <p><em>Emphasized</em></p>
-  <p><small>Small</small></p>
-  <p><del>Deleted</del></p>
-  <p><ins>Inserted</ins></p>
-  <p>
-    <kbd>Keyboard</kbd> (<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>delete</kbd>)
-  </p>
-  <p><mark>Marked</mark></p>
-  <p><abbr title="Abbreviation">Abbreviation</abbr></p>
-  <p>Sub<sub>script</sub></p>
-  <p>Super<sup>script</sup></p>
-</div>
+          <p>
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+            dolor auctor. Curabitur blandit tempus porttitor.
+            Curabitur blandit tempus porttitor. Etiam porta sem
+            malesuada magna mollis euismod. Vestibulum id ligula
+            porta felis euismod semper.
+          </p>
+        </div>
 
-<hr />
+        <hr />
 
-<div>
-  <p id="section-tables">
-    <strong>Tables:</strong>
-  </p>
+        <div>
+          <p id="section-lists">
+            <strong>Lists:</strong>
+          </p>
 
-  <table>
-    <caption>
-      Caption
-    </caption>
-    <thead>
-      <tr>
-        <th scope="col">Pellentesque</th>
-        <th scope="col">Quam</th>
-        <th scope="col">Aenean</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Fermentum</th>
-        <td>Fringilla</td>
-        <td>Dapibus</td>
-      </tr>
-      <tr>
-        <th scope="row">Lorem</th>
-        <td>Mollis</td>
-        <td>Inceptos</td>
-      </tr>
-      <tr>
-        <th scope="row">Sollicitudin</th>
-        <td>Ullamcorper</td>
-        <td>Tellus</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th scope="row">Ridiculus</th>
-        <td colspan="2">Venenatis</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+          <p id="ordered-list">
+            <strong>Ordered list:</strong>
+          </p>
+          <ol role="list" aria-labelledby="ordered-list">
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Maecenas sed diam eget risus varius blandit sit
+              amet non magna.</li>
+          </ol>
 
-<hr />
+          <p id="ordered-list-reversed">
+            <strong>Ordered list (reversed):</strong>
+          </p>
+          <ol role="list" aria-labelledby="ordered-list-reversed" reversed>
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Maecenas sed diam eget risus varius blandit sit
+              amet non magna.</li>
+          </ol>
 
-<div>
-  <p id="section-fieldsets">
-    <strong>Fieldsets:</strong>
-  </p>
+          <p id="unordered-list">
+            <strong>Unordered list:</strong>
+          </p>
+          <ul role="list" aria-labelledby="unordered-list">
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing
+              elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Maecenas sed diam eget risus varius blandit sit
+              amet non magna.</li>
+          </ul>
 
-  <fieldset>
-    <legend>Legend</legend>
+          <p id="definition-list">
+            <strong>Definition list:</strong>
+          </p>
+          <dl aria-labelledby="definition-list">
+            <dt>Lorem ipsum dolor sit amet</dt>
+            <dd>
+              Consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+            </dd>
 
-    <p>Fieldset</p>
-  </fieldset>
-</div>
+            <dt>Lorem ipsum dolor sit amet</dt>
+            <dd>
+              Consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+            </dd>
+          </dl>
 
-<hr />
+          <p id="definition-list">
+            <strong>Definition list with &lt;div&gt;s:</strong>
+          </p>
+          <dl aria-labelledby="definition-list">
+            <div>
+              <dt>Lorem ipsum dolor sit amet</dt>
+              <dd>
+                Consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.
+              </dd>
+            </div>
 
-<div>
-  <p id="section-form-elements">
-    <strong>Form elements:</strong>
-  </p>
+            <div>
+              <dt>Lorem ipsum dolor sit amet</dt>
+              <dd>
+                Consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.
+              </dd>
+            </div>
+          </dl>
+        </div>
 
-  <div>
-    <label for="kitchen-sink-text">Text</label>
-    <input
-      id="kitchen-sink-text"
-      type="text"
-      placeholder="Lorem ipsum dolor sit amet"
-    />
-  </div>
+        <hr />
 
-  <div>
-    <label for="kitchen-sink-text-2">Text disabled</label>
-    <input
-      id="kitchen-sink-text-2"
-      type="text"
-      placeholder="Lorem ipsum dolor sit amet"
-      disabled
-    />
-  </div>
+        <div>
+          <p id="section-inline-elements">
+            <strong>Inline elements:</strong>
+          </p>
 
-  <div>
-    <input id="kitchen-sink-checkbox" name="checkbox" type="checkbox" />
-    <label for="kitchen-sink-checkbox">Checkbox</label>
-  </div>
+          <p><a href="#">Link</a></p>
+          <p><strong>Strong</strong></p>
+          <p><em>Emphasized</em></p>
+          <p><small>Small</small></p>
+          <p><del>Deleted</del></p>
+          <p><ins>Inserted</ins></p>
+          <p>
+            <kbd>Keyboard</kbd> (<kbd>ctrl</kbd> + <kbd>alt</kbd> +
+            <kbd>delete</kbd>)
+          </p>
+          <p><mark>Marked</mark></p>
+          <p><abbr title="Abbreviation">Abbreviation</abbr></p>
+          <p>Sub<sub>script</sub></p>
+          <p>Super<sup>script</sup></p>
+        </div>
 
-  <div>
-    <input
-      id="kitchen-sink-checkbox-2"
-      name="checkbox"
-      type="checkbox"
-      checked
-    />
-    <label for="kitchen-sink-checkbox-2">Checkbox</label>
-  </div>
+        <hr />
 
-  <div>
-    <input id="kitchen-sink-radio" name="radio" type="radio" />
-    <label for="kitchen-sink-radio">Radio</label>
-  </div>
+        <div>
+          <p id="section-tables">
+            <strong>Tables:</strong>
+          </p>
 
-  <div>
-    <input id="kitchen-sink-radio-2" name="radio" type="radio" checked />
-    <label for="kitchen-sink-radio-2">Radio</label>
-  </div>
+          <table>
+            <caption> Caption </caption>
+            <thead>
+              <tr>
+                <th scope="col">Pellentesque</th>
+                <th scope="col">Quam</th>
+                <th scope="col">Aenean</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Fermentum</th>
+                <td>Fringilla</td>
+                <td>Dapibus</td>
+              </tr>
+              <tr>
+                <th scope="row">Lorem</th>
+                <td>Mollis</td>
+                <td>Inceptos</td>
+              </tr>
+              <tr>
+                <th scope="row">Sollicitudin</th>
+                <td>Ullamcorper</td>
+                <td>Tellus</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Ridiculus</th>
+                <td colspan="2">Venenatis</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
 
-  <div>
-    <label for="kitchen-sink-select">Select</label>
-    <select id="kitchen-sink-select">
-      <option>-</option>
-      <option selected>Pellentesque</option>
-      <option>Quam</option>
-      <option>Aenean</option>
-    </select>
-  </div>
+        <hr />
 
-  <div>
-    <label for="kitchen-sink-select-2">Select w/ optgroup</label>
-    <select id="kitchen-sink-select-2">
-      <option>-</option>
-      <optgroup label="Ridiculus">
-        <option selected>Fermentum</option>
-        <option>Fringilla</option>
-        <option>Dapibus</option>
-      </optgroup>
-      <optgroup label="Venenatis">
-        <option>Lorem</option>
-        <option>Mollis</option>
-        <option>Inceptos</option>
-      </optgroup>
-    </select>
-  </div>
+        <div>
+          <p id="section-fieldsets">
+            <strong>Fieldsets:</strong>
+          </p>
 
-  <div>
-    <label for="kitchen-sink-file">File</label>
-    <input id="kitchen-sink-file" type="file" />
-  </div>
-</div>
+          <fieldset>
+            <legend>Legend</legend>
 
-<hr />
+            <p>Fieldset</p>
+          </fieldset>
+        </div>
 
-<div>
-  <p id="section-buttons">
-    <strong>Buttons:</strong>
-  </p>
+        <hr />
 
-  <div>
-    <button type="button">Lorem ipsum</button>
-    <span>button</span>
-  </div>
+        <div>
+          <p id="section-form-elements">
+            <strong>Form elements:</strong>
+          </p>
 
-  <div>
-    <button type="submit">Lorem ipsum</button>
-    <span>submit</span>
-  </div>
+          <div>
+            <label for="kitchen-sink-text">Text</label>
+            <input id="kitchen-sink-text" type="text" placeholder="Lorem ipsum dolor sit amet" />
+          </div>
 
-  <div>
-    <button type="reset">Lorem ipsum</button>
-    <span>reset</span>
-  </div>
+          <div>
+            <label for="kitchen-sink-text-2">Text disabled</label>
+            <input id="kitchen-sink-text-2" type="text" placeholder="Lorem ipsum dolor sit amet" disabled />
+          </div>
 
-  <div>
-    <button type="button" disabled>Lorem ipsum</button>
-    <span>button, disabled</span>
-  </div>
-</div>
+          <div>
+            <input id="kitchen-sink-checkbox" name="checkbox" type="checkbox" />
+            <label for="kitchen-sink-checkbox">Checkbox</label>
+          </div>
 
-<hr />
+          <div>
+            <input id="kitchen-sink-checkbox-2" name="checkbox" type="checkbox" checked />
+            <label for="kitchen-sink-checkbox-2">Checkbox</label>
+          </div>
 
-<div>
-  <p id="section-code-blocks">
-    <strong>Code blocks:</strong>
-  </p>
+          <div>
+            <input id="kitchen-sink-radio" name="radio" type="radio" />
+            <label for="kitchen-sink-radio">Radio</label>
+          </div>
 
-  <pre><code>
+          <div>
+            <input id="kitchen-sink-radio-2" name="radio" type="radio" checked />
+            <label for="kitchen-sink-radio-2">Radio</label>
+          </div>
+
+          <div>
+            <label for="kitchen-sink-select">Select</label>
+            <select id="kitchen-sink-select">
+              <option>-</option>
+              <option selected>Pellentesque</option>
+              <option>Quam</option>
+              <option>Aenean</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="kitchen-sink-select-2">Select w/ optgroup</label>
+            <select id="kitchen-sink-select-2">
+              <option>-</option>
+              <optgroup label="Ridiculus">
+                <option selected>Fermentum</option>
+                <option>Fringilla</option>
+                <option>Dapibus</option>
+              </optgroup>
+              <optgroup label="Venenatis">
+                <option>Lorem</option>
+                <option>Mollis</option>
+                <option>Inceptos</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label for="kitchen-sink-file">File</label>
+            <input id="kitchen-sink-file" type="file" />
+          </div>
+        </div>
+
+        <hr />
+
+        <div>
+          <p id="section-buttons">
+            <strong>Buttons:</strong>
+          </p>
+
+          <div>
+            <button type="button">Lorem ipsum</button>
+            <span>button</span>
+          </div>
+
+          <div>
+            <button type="submit">Lorem ipsum</button>
+            <span>submit</span>
+          </div>
+
+          <div>
+            <button type="reset">Lorem ipsum</button>
+            <span>reset</span>
+          </div>
+
+          <div>
+            <button type="button" disabled>Lorem ipsum</button>
+            <span>button, disabled</span>
+          </div>
+        </div>
+
+        <hr />
+
+        <div>
+          <p id="section-code-blocks">
+            <strong>Code blocks:</strong>
+          </p>
+
+          <pre><code>
     def hello_world():
     print("Hello world")
   </code></pre>
 
-  <pre><code>
+          <pre><code>
     SELECT *
     FROM `hello_world`
     WHERE `foo` = 'bar';
   </code></pre>
 
-  <pre><code>
+          <pre><code>
     &lt;h1&gt;Hello world&lt;/h1&gt;
     &lt;p&gt;Vestibulum id ligula porta felis euismod semper.&lt;/p&gt;
   </code></pre>
 
-  <pre><code>
+          <pre><code>
     .hello-world &lbrace;
       background-color: #663399;
       display: block;
@@ -441,29 +607,24 @@
       width: 4em;
     &rbrace;
   </code></pre>
-</div>
+        </div>
 
-<hr />
+        <hr />
 
-<small>
-  Source:
-  <a
-    href="https://codepen.io/MHLut/pen/JNKzPX"
-    rel="external noopener noreferrer"
-    >https://codepen.io/MHLut/pen/JNKzPX</a
-  >
-</small>
+        <small>
+          Source:
+          <a href="https://codepen.io/MHLut/pen/JNKzPX"
+            rel="external noopener noreferrer">https://codepen.io/MHLut/pen/JNKzPX</a>
+        </small>
+    </details>
+    </section>
+  </main>
 
-    
-</details>
-        
-    </main>
+  <footer>
+    <p>© 2024 Miguel Pimentel</p>
+  </footer>
 
-    <footer>
-        <p>© 2024 Miguel Pimentel</p>
-    </footer>
-
-    <script></script>
+  <script></script>
 </body>
 
 </html>
