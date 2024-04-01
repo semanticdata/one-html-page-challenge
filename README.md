@@ -4,23 +4,23 @@ Create anything you want within a single html file. Practice your skills with th
 
 Check out the [demo](https://one-html-page-challenge-zeta.vercel.app/).
 
-## Files
+## 📂 Files
 
 Only `index.hmtl` is being considered for the challenge. The remaining files and folders help keeping it clean and offer some comfort creatures to try and make HTML, CSS fun.
 
-| Filename      | Description                 |
-| ------------- | --------------------------- |
-| `.vscode`     | Holds VS Code settings.     |
-| .vscode       | Holds VS Code settings.     |
-| `vercel.json` | HTTP headers configuration. |
-| vercel.json   | HTTP headers configuration. |
+|   Filename    | Description                              |
+| :-----------: | ---------------------------------------- |
+|   `.vscode`   | VS Code specific project settings.       |
+|  `.nojekyll`  | Tell GitHub this is not a Jekyll site.   |
+| `.prettierrc` | [Prettier](https://prettier.io/) config. |
+| `vercel.json` | HTTP headers configuration.              |
 
-## References
+## 📖 References
 
 - [One HTML Page Challenge Repository](https://github.com/Metroxe/one-html-page-challenge)
 - [One HTML Page Challenge Website](https://metroxe.github.io/one-html-page-challenge/)
 
-## Useful Links
+## 🔗 Useful Links
 
 - [Fun Times with CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
 - [Pixel Art to CSS](https://www.pixelartcss.com/)
@@ -31,20 +31,22 @@ Only `index.hmtl` is being considered for the challenge. The remaining files and
 - [How to render images in HTML with base64 strings](https://stackoverflow.com/a/41057998)
 - [Convert images to base64](https://www.browserling.com/tools/image-to-base64)
 
-## Useful Commands
+## ⚒ Useful Commands
 
-**Check formatting with Prettier**
+### Check formatting with Prettier
 
 ```sh
+# check formatting with Prettier
 npx prettier . --check
 ```
 
-**Format code base with Prettier**
+### Format code base with Prettier
 
 ```sh
+# Format code base with Prettier
 npx prettier . --write
 ```
 
-## License
+## © License
 
 This code is released under the [MIT License](LICENSE).
