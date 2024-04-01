@@ -1,8 +1,19 @@
 # 📃 One HMTL Page Challenge
 
-Create anything you want within 1 single html file. Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern framework.
+Create anything you want within a single html file. Practice your skills with the barebones of web development: no assistance from libraries, no separation of files, and no assistance from a modern frameworks.
 
 Check out the [demo](https://one-html-page-challenge-zeta.vercel.app/).
+
+## Files
+
+Only `index.hmtl` is being considered for the challenge. The remaining files and folders help keeping it clean and offer some comfort creatures to try and make HTML, CSS fun.
+
+| Filename      | Description                 |
+| ------------- | --------------------------- |
+| `.vscode`     | Holds VS Code settings.     |
+| .vscode       | Holds VS Code settings.     |
+| `vercel.json` | HTTP headers configuration. |
+| vercel.json   | HTTP headers configuration. |
 
 ## References
 
