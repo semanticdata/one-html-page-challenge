@@ -4,17 +4,6 @@ Create anything you want within a single HTML file. Practice your skills with th
 
 Check out the [demo](https://one-html-page-challenge-zeta.vercel.app/).
 
-## 📂 Files
-
-Only `index.hmtl` is being considered for the challenge. The remaining files and folders help keeping it clean and offer some comfort creatures to try and make HTML and CSS fun.
-
-|   Filename    | Description                              |
-| :-----------: | ---------------------------------------- |
-|   `.vscode`   | VS Code project settings.       |
-|  `.nojekyll`  | Tells GitHub it's not a Jekyll site.   |
-| `.prettierrc` | [Prettier](https://prettier.io/) configuration. |
-| `vercel.json` | HTTP headers configuration.              |
-
 ## 📖 References
 
 - [One HTML Page Challenge Repository](https://github.com/Metroxe/one-html-page-challenge)
@@ -22,28 +11,14 @@ Only `index.hmtl` is being considered for the challenge. The remaining files and
 
 ## 🔗 Useful Links
 
-- [Fun Times with CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
-- [Pixel Art to CSS](https://www.pixelartcss.com/)
-- [How to make a simple HTML5 Canvas Game](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
-- [JSCompress: Compile Multiple JS Files Into a Single Script Tag](https://jscompress.com/)
-- [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)
-- [List of Javascript Game Frameworks](https://github.com/collections/javascript-game-engines)
-- [How to render images in HTML with base64 strings](https://stackoverflow.com/a/41057998)
 - [Convert images to base64](https://www.browserling.com/tools/image-to-base64)
-
-## ⚒ Useful Commands
-
-### Check formatting with Prettier
-
-```sh
-pnpm run check
-```
-
-### Format code base with Prettier
-
-```sh
-pnpm run format
-```
+- [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)
+- [Fun Times with CSS Pixel Art](https://css-tricks.com/fun-times-css-pixel-art/)
+- [How to make a simple HTML5 Canvas Game](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
+- [How to render images in HTML with base64 strings](https://stackoverflow.com/a/41057998)
+- [JSCompress: Compile Multiple JS Files Into a Single Script Tag](https://jscompress.com/)
+- [List of Javascript Game Frameworks](https://github.com/collections/javascript-game-engines)
+- [Pixel Art to CSS](https://www.pixelartcss.com/)
 
 ## © License
 
